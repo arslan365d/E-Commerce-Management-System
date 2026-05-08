@@ -37,6 +37,41 @@ public:
        this->salary= balance;
    }
 };
+class Product
+{
+public:
+   int id;
+   string name, company, type;
+   float rating, price;
+
+public:
+   Product() {}
+
+   Product(int id, string name, string company, string type, float rating, float price)
+   {
+      this->id = id;
+      this->name = name;
+      this->company = company;
+      this->type = type;
+      this->rating = rating;
+      this->price = price;
+   }
+};
+vector<Product> products;
+
+class CartItem{
+    public:
+     Product product;
+     int quantity;
+
+     CartItem(Product product,int quantity): product(product) ,quantity(quantity){}
+
+};
+
+class Cart{
+   public:
+    vector<CartItem> cart; 
+};
 
 int main() {
   ifstream inFile("users.txt");
