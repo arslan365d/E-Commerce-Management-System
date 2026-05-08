@@ -1,0 +1,20 @@
+1|iPhone 15|Apple|Smartphone|4.8|350000
+2|Galaxy S23|Samsung|Smartphone|4.7|280000
+3|CeraVe Moisturizing Cream|CeraVe|Skincare|4.6|8500
+4|The Ordinary Niacinamide 10%|The Ordinary|Skincare|4.7|6500
+5|L'Oreal Revitalift Serum|L'Oreal|Skincare|4.5|12000
+6|Neutrogena Face Wash|Neutrogena|Skincare|4.6|5500
+7|MacBook Air M2|Apple|Laptop|4.9|420000
+8|HP Pavilion 15|HP|Laptop|4.4|180000
+9|Cetaphil Gentle Cleanser|Cetaphil|Skincare|4.7|7000
+10|AirPods Pro 2|Apple|Earbuds|4.7|70000
+11|Samsung Buds 2|Samsung|Earbuds|4.5|45000
+12|Garnier Vitamin C Serum|Garnier|Skincare|4.4|6000
+13|Himalaya Neem Face Wash|Himalaya|Skincare|4.3|3000
+14|Sony WH-1000XM5|Sony|Headphones|4.8|85000
+15|Asus ROG Strix|Asus|Laptop|4.7|500000
+16|Maybelline Fit Me Foundation|Maybelline|Makeup|4.5|4500
+17|L'Oreal Lipstick Matte|L'Oreal|Makeup|4.4|3500
+18|Canon EOS 1500D|Canon|Camera|4.5|150000
+19|Nike Air Force 1|Nike|Shoes|4.8|22000
+20|Adidas Ultraboost|Adidas|Shoes|4.7|28000
