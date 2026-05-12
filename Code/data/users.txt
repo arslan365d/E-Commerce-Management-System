@@ -1,0 +1,4 @@
+Hasham|hasham@gmail.com|hash123|4000
+Maria|mariab@gmail.com|maria123|1160
+Karan Aujla|Karanaujla123@gmail.com|karan456|700000
+Ibtisam Ahmed|Ibtisam123@gmail.com|Ibtisam123|15000

@@ -58,7 +58,7 @@ int main()
         switch (choice)
         {
 
-        // ================= BUYER LOGIN =================
+            // ================= BUYER LOGIN =================
 
         case 1:
         {
@@ -74,6 +74,11 @@ int main()
                 if (email.empty())
                 {
                     cout << "Email cannot be empty. Enter again: ";
+                }
+                else if (email.find('@') == string::npos)
+                {
+                    cout << "Invalid Email Format. Enter again: ";
+                    email.clear();
                 }
 
             } while (email.empty());
@@ -123,14 +128,14 @@ int main()
             break;
         }
 
-        // ================= ADMIN LOGIN =================
+            // ================= ADMIN LOGIN =================
 
         case 2:
         {
             string email, password;
             int adminIndex = -1;
 
-            cout << "\nEnter Email: ";
+           cout << "\nEnter Email: ";
 
             do
             {
@@ -139,6 +144,11 @@ int main()
                 if (email.empty())
                 {
                     cout << "Email cannot be empty. Enter again: ";
+                }
+                else if (email.find('@') == string::npos)
+                {
+                    cout << "Invalid Email Format. Enter again: ";
+                    email.clear();
                 }
 
             } while (email.empty());
@@ -227,7 +237,7 @@ int main()
             break;
         }
 
-        // ================= CREATE ACCOUNT =================
+            // ================= CREATE ACCOUNT =================
 
         case 3:
         {
@@ -240,12 +250,13 @@ int main()
             {
                 getline(cin, name);
 
-                if (name.empty())
+                if (!Utility::isValidName(name))
                 {
-                    cout << "Name cannot be empty. Enter again: ";
+                    cout << "Invalid name! Name should not contain numbers. Enter again: ";
+                    name.clear();
                 }
 
-            } while (name.empty());
+            } while (!Utility::isValidName(name));
 
             cout << "Enter Email: ";
 
@@ -298,7 +309,7 @@ int main()
             break;
         }
 
-        // ================= EXIT =================
+            // ================= EXIT =================
 
         case 4:
 
@@ -308,7 +319,7 @@ int main()
 
             return 0;
 
-        // ================= INVALID =================
+            // ================= INVALID =================
 
         default:
 
