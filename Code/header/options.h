@@ -7,6 +7,7 @@
 #include "user.h"
 #include "cart.h"
 #include "fileManager.h"
+
 #include "voice.h"
 #include "utility.h"
 
@@ -42,7 +43,6 @@ public:
             cout << "\033[32mLogout Successful!!!\033[0m" << endl;
             break;
          default:
-            PlaySound(TEXT("./sounds/fahh.wav"), NULL, SND_ASYNC);
             cout << "\033[31mInvalid Choice!\033[0m" << endl;
          }
       } while (choice != 3);
@@ -53,7 +53,7 @@ public:
       int choice;
       do
       {
-         cout << "\n\n1)View Products.\n2)Add to Cart.\n3)View Cart\n4)Checkout\n5)Back\n"
+         cout << "\n\n1)View Products.\n2)Add to Cart.\n3)Remove from Cart.\n4)View Cart\n5)Checkout\n6)Back\n"
               << endl;
          choice = Utility::input<int>("Enter your Choice: ");
 
@@ -93,7 +93,6 @@ public:
                }
                else
                {
-                  PlaySound(TEXT("./sounds/fahh.wav"), NULL, SND_ASYNC);
                   cout << "\n\033[32mInvalid Product ID......\033[0m";
                }
 
@@ -103,9 +102,47 @@ public:
             break;
 
          case 3:
+         {
+            char choice;
+            do
+            {
+               int productId;
+               int productQuantity;
+
+               cout << "\nEnter Product ID: ";
+               cin >> productId;
+               cout << "Enter Product Quantity: ";
+               cin >> productQuantity;
+
+               int found = -1;
+               for (int i = 0; i < products.size(); i++)
+               {
+                  if (productId == products[i].id)
+                  {
+                     found = i;
+                     break;
+                  }
+               }
+
+               if (found != -1)
+               {
+                  cart.removeProduct(products[found], productQuantity);
+               }
+               else
+               {
+                  cout << "\n\033[32mInvalid Product ID......\033[0m";
+               }
+
+               choice = Utility::input<char>("If you Want to remove more Products in Cart. Press [Y/N]: ");
+
+            } while (choice == 'y' || choice == 'Y');
+            break;
+         }   
+
+         case 4:
             cart.viewCart();
             break;
-         case 4:
+         case 5:
          {
             cout << "\n\033[1;34m==========================CHECKOUT==========================\033[0m" << endl;
             cout << "\nNo Of Products:  " << cart.noOfProducts << endl
@@ -129,19 +166,16 @@ public:
             }
             else
             {
-               PlaySound(TEXT("./sounds/gareebon.wav"), NULL, SND_ASYNC);
                cout << "\n\033[31mInsuffiencet Balance!!!!!\033[0m" << endl;
             }
             break;
          }
-         case 5:
-            PlaySound(TEXT("./sounds/back.wav"), NULL, SND_ASYNC);
+         case 6:
             break;
          default:
-            PlaySound(TEXT("./sounds/fahh.wav"), NULL, SND_ASYNC);
             cout << "\033[31mInvalid Choice!\033[0m" << endl;
          }
-      } while (choice != 5);
+      } while (choice != 6);
    }
 
    static void accountOptions(User &user, vector<User> &users)
@@ -185,10 +219,8 @@ public:
          }
 
          case 4:
-            PlaySound(TEXT("./sounds/back.wav"), NULL, SND_ASYNC);
             break;
          default:
-            PlaySound(TEXT("./sounds/fahh.wav"), NULL, SND_ASYNC);
             cout << "\033[31mInvalid Choice!\033[0m" << endl;
          }
       } while (choice != 4);

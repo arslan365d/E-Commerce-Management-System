@@ -2,7 +2,7 @@
 #include <vector>
 #include <limits>
 #include <windows.h>
-#include <mmsystem.h>
+
 
 // Custom Header Files
 #include "./header/fileManager.h"
@@ -120,8 +120,7 @@ int main()
             }
             else
             {
-                PlaySound(TEXT("./sounds/fahh.wav"), NULL, SND_ASYNC);
-
+       
                 cout << "\033[31mInvalid Credentials!!!!\033[0m\n";
             }
 
@@ -218,10 +217,7 @@ int main()
                         break;
 
                     default:
-                        PlaySound(TEXT("./sounds/fahh.wav"),
-                                  NULL,
-                                  SND_ASYNC);
-
+            
                         cout << "\033[31mInvalid Choice!\033[0m\n";
                     }
 
@@ -229,8 +225,7 @@ int main()
             }
             else
             {
-                PlaySound(TEXT("./sounds/fahh.wav"), NULL, SND_ASYNC);
-
+    
                 cout << "\033[31mInvalid Admin Credentials!!!!\033[0m\n";
             }
 
@@ -322,10 +317,6 @@ int main()
             // ================= INVALID =================
 
         default:
-
-            PlaySound(TEXT("./sounds/fahh.wav"),
-                      NULL,
-                      SND_ASYNC);
 
             cout << "\033[31mInvalid Choice!\033[0m\n";
         }

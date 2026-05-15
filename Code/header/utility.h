@@ -28,10 +28,6 @@ public:
                 numeric_limits<streamsize>::max(),
                 '\n');
 
-            PlaySound(TEXT("./sounds/fahh.wav"),
-                      NULL,
-                      SND_ASYNC);
-
             cout << "\033[31mInvalid Input! Try Again.\033[0m\n";
 
             cout << "\033[33m" << message << " \033[0m";
@@ -59,11 +55,6 @@ public:
             cin.ignore(
                 numeric_limits<streamsize>::max(),
                 '\n');
-
-            PlaySound(TEXT("./sounds/fahh.wav"),
-                      NULL,
-                      SND_ASYNC);
-
             cout << "\033[31mInvalid Balance! \033[0m";
         }
 
